@@ -26,3 +26,18 @@ select name,salary from employee_payroll where startDate between ('2021-01-01') 
 alter table employee_payroll add Gender char(1);
 update employee_payroll set Gender='M' where name='NILESH' or name='nil' or name='niles';
 update employee_payroll set Gender='F' where name='amam';
+
+--UC7--
+select sum(salary) as TotalSalary from employee_payroll;
+
+select sum(salary)as TotalSalary ,gender  from employee_payroll where Gender='M' group by Gender;
+
+select sum(salary)as TotalSalary,gender from employee_payroll group by Gender;
+
+select avg(salary)as avgSalary,gender  from employee_payroll group by Gender;
+
+select min(salary) as minSalary ,gender from employee_payroll   group by gender;
+
+select count(salary) as CountofGender ,gender from employee_payroll   group by gender;
+
+select max(salary) as maxSalary ,gender from employee_payroll   group by gender;
