@@ -58,3 +58,24 @@ update employee_payroll set Address='Pune' where name='nil';
 update employee_payroll set Address='Mumbai' where name='amam';
 
 
+--UC9--
+alter table employee_payroll add Deductions float,TaxablePay float,IncomeTax float,NetPay float;
+
+Exec sp_rename 'employee_payroll.salary','Basic Pay','COLUMN'; 
+
+update employee_payroll set NetPay=220000 where name='Nilesh';
+update employee_payroll set NetPay=230000 where name='niles';
+update employee_payroll set NetPay=190000 where name='nil';
+update employee_payroll set NetPay=250000 where name='amam';
+
+update employee_payroll set Deductions=15000 where name='Nilesh';
+update employee_payroll set Deductions=14000 where name='niles';
+update employee_payroll set Deductions=20000 where name='nil';
+update employee_payroll set Deductions=13000 where name='anam';
+
+update employee_payroll set IncomeTax=2500;
+update employee_payroll set TaxablePay=1000;
+
+
+
+
